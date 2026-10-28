@@ -255,7 +255,7 @@ The full log, with symptom, cause, fix and evidence for each item, is in [`docs/
 - **Simulated ISP:** it runs no DNS service, so internet names do not resolve in this lab. Internet reachability is tested by IP (8.8.8.8).
 - **Port security:** one MAC address per port, so a PC connected through an IP phone would need a maximum of 2 on that port. This build has no phones, so one is enough.
 - **OSPF authentication:** the tests show authentication enabled and adjacencies up. A wrong-key test, showing that a mismatched key blocks an adjacency, was not run.
-- **VLAN 999:** it is both the native VLAN and the parking VLAN for unused ports. A separate parking VLAN would be cleaner.
+- **VLAN 999:** it is both the native VLAN and the parking VLAN for unused ports.
 - **Password hashing:** secrets use Cisco type 5 hashing, which is the strongest option these Packet Tracer images support.
 
 ### Not built (future work)
