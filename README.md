@@ -294,7 +294,7 @@ The full log, with symptom, cause, fix and evidence for each item, is in [`docs/
 
 ## Security note
 
-The files in `configs/` and the screenshots have had password hashes, OSPF keys and Wi-Fi passphrases replaced or blurred. Do not reuse any credential from this lab on a real network.
+The files in `configs/` and the screenshots have had password hashes, OSPF keys and Wi-Fi passphrases replaced or blurred. 
 
 ## License
 
