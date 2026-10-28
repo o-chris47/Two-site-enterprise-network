@@ -2,7 +2,8 @@
 
 A two-site enterprise network designed, built and tested in Cisco Packet Tracer. It covers switching, routing, gateway redundancy, central services, security and wireless, and every feature was verified with a test plan and recorded in a troubleshooting log.
 
-![Network topology diagram](diagrams/topology.png)
+![Network topology diagram](<img width="1722" height="830" alt="topolog" src="https://github.com/user-attachments/assets/794ce7a5-22e9-4005-a28b-09554d67903d" />
+
 
 ## Quick links
 
