@@ -151,7 +151,7 @@ interface GigabitEthernet0/1
  no switchport
  ip address 10.10.255.10 255.255.255.252
  ip ospf authentication message-digest
- ip ospf message-digest-key 1 md5 ospf13
+ ip ospf message-digest-key 1 md5 ******
  duplex auto
  speed auto
 !
