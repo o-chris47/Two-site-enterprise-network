@@ -12,7 +12,7 @@ A two-site enterprise network designed, built and tested in Cisco Packet Tracer.
 | Topology diagram | [diagrams/topology.png](diagrams/topology.png) |
 | Device configurations (sanitized) | [configs/](configs/) |
 | Troubleshooting log | [docs/troubleshooting-log.md](docs/troubleshooting-log.md) |
-| Evidence: services | [docs/screenshots/service/](docs/screenshots/service/) |
+| Evidence: services | [docs/screenshots/service/](docs/screenshots/services/) |
 | Evidence: routing and redundancy | [docs/screenshots/routing-and-redundancy/](docs/screenshots/routing-and-redundancy/) |
 | Evidence: security and wireless | [docs/screenshots/security-and-wireless/](docs/screenshots/security-and-wireless/) |
 | License | [LICENSE](LICENSE) |
