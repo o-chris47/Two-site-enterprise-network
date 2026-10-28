@@ -212,6 +212,5 @@ Repository layout
         ├── security-and-wireless/
         └── service/
 ```
-
 License
 This project is released under the license in LICENSE.
