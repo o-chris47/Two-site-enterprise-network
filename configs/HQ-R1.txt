@@ -1,0 +1,136 @@
+Building configuration...
+
+Current configuration : 2058 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname HQ-R1
+!
+!
+!
+enable secret 5 $1$mERr$WKkcGROjDgUmPKrVvqyr10
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username admin secret 5 $1$mERr$WKkcGROjDgUmPKrVvqyr10
+!
+!
+license udi pid CISCO2911/K9 sn FTX15247H6X-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+no ip domain-lookup
+ip domain-name chris.lab
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 203.0.113.2 255.255.255.252
+ ip nat outside
+ duplex auto
+ speed auto
+ no cdp enable
+!
+interface GigabitEthernet0/1
+ ip address 10.10.255.5 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf12
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 10.10.255.9 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf13
+ ip nat inside
+ duplex auto
+ speed auto
+!
+interface Serial0/2/0
+ ip address 10.10.255.1 255.255.255.252
+ ip ospf authentication message-digest
+ ip ospf message-digest-key 1 md5 ospf14
+ ip nat inside
+ clock rate 64000
+!
+interface Serial0/2/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface GigabitEthernet0/3/0
+ no ip address
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ router-id 1.1.1.1
+ log-adjacency-changes
+ network 10.10.255.0 0.0.0.3 area 0
+ network 10.10.255.4 0.0.0.3 area 0
+ network 10.10.255.8 0.0.0.3 area 0
+ default-information originate
+!
+ip nat inside source list 1 interface GigabitEthernet0/0 overload
+ip classless
+ip route 0.0.0.0 0.0.0.0 203.0.113.1 
+!
+ip flow-export version 9
+!
+!
+access-list 1 permit 10.10.0.0 0.0.255.255
+access-list 10 permit 10.10.1.64 0.0.0.15
+access-list 10 permit 10.10.2.128 0.0.0.15
+access-list 10 deny any
+!
+banner motd ^CAuthorized access only. Activity is logged.^C
+!
+!
+!
+!
+line con 0
+ exec-timeout 5 0
+ logging synchronous
+ login local
+!
+line aux 0
+!
+line vty 0 4
+ access-class 10 in
+ exec-timeout 5 0
+ login local
+ transport input ssh
+!
+!
+!
+end
