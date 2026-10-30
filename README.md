@@ -164,18 +164,18 @@ Evidence is stored under [`docs/screenshots/`](docs/screenshots/) in three folde
 
 | Test | Result | Evidence |
 |---|---|---|
-| HQ staff PC receives a DHCP lease through the relay (10.10.0.0/25, gateway 10.10.0.1, DNS 10.10.0.130) | Pass | (docs/screenshots/service/svc-01-dhcp-hq-staff.png) |
-| HQ guest laptop on the guest SSID receives a lease (10.10.1.0/26, gateway 10.10.1.1) | Pass | [svc-02](docs/screenshots/service/svc-02-dhcp-hq-guest-wifi.png) |
-| Branch staff PC receives a lease across the WAN (10.10.2.0/26, gateway 10.10.2.1) | Pass | [svc-03](docs/screenshots/service/svc-03-dhcp-br-staff.png), [svc-03b](docs/screenshots/service/svc-03b-dhcp-br-staff-second-lease.png) |
-| Branch guest laptop on the guest SSID receives a lease (10.10.2.96/27, gateway 10.10.2.97) | Pass | [svc-04](docs/screenshots/service/svc-04-dhcp-br-guest-wifi.png) |
-| HQ VoIP PC receives a lease (10.10.0.192/26, gateway 10.10.0.193, DNS 10.10.0.130) | Pass | [svc-09](docs/screenshots/service/svc-09-dhcp-voip-hq.png) |
-| Branch VoIP PC receives a lease across the WAN (10.10.2.64/27, gateway 10.10.2.65, DNS 10.10.0.130) | Pass | [svc-09b](docs/screenshots/service/svc-09b-dhcp-voip-br.png) |
-| Management workstations use static addresses inside the MGMT subnets, outside the DHCP pools (BR-MGMT 10.10.2.132, HQ-MGMT 10.10.1.72) | Pass | [svc-08](docs/screenshots/service/svc-08-static-mgmt-br.png), [svc-08b](docs/screenshots/service/svc-08b-static-mgmt-hq.png) |
-| Branch staff resolves `web.chris.lab` through the central DNS server | Pass | [svc-05](docs/screenshots/service/svc-05-dns-br-staff-internal-ok.png) |
-| NAT overload translates HQ staff traffic to 203.0.113.2 | Pass | [svc-06](docs/screenshots/service/svc-06-nat-hq-staff-icmp.png) |
-| NAT translates branch staff traffic and guest DNS queries | Pass | [svc-07](docs/screenshots/service/svc-07-nat-br-staff-and-guest-dns.png) |
-| HQ guest reaches 8.8.8.8 | Pass | [svc-10](docs/screenshots/service/svc-10-guest-internet-hq-and-ssh-blocked.png) |
-| Branch guest reaches 8.8.8.8 | Pass | [svc-10b](docs/screenshots/service/svc-10b-guest-internet-br-and-ssh-blocked.png) |
+| HQ staff PC receives a DHCP lease through the relay (10.10.0.0/25, gateway 10.10.0.1, DNS 10.10.0.130) | Pass | [svc-01](docs/screenshots/services/svc-01-dhcp-hq-staff.png) |
+| HQ guest laptop on the guest SSID receives a lease (10.10.1.0/26, gateway 10.10.1.1) | Pass | [svc-02](docs/screenshots/services/svc-02-dhcp-hq-guest-wifi.png) |
+| Branch staff PC receives a lease across the WAN (10.10.2.0/26, gateway 10.10.2.1) | Pass | [svc-03](docs/screenshots/services/svc-03-dhcp-br-staff.png), [svc-03b](docs/screenshots/services/svc-03b-dhcp-br-staff-second-lease.png) |
+| Branch guest laptop on the guest SSID receives a lease (10.10.2.96/27, gateway 10.10.2.97) | Pass | [svc-04](docs/screenshots/services/svc-04-dhcp-br-guest-wifi.png) |
+| HQ VoIP PC receives a lease (10.10.0.192/26, gateway 10.10.0.193, DNS 10.10.0.130) | Pass | [svc-09](docs/screenshots/services/svc-09-dhcp-voip-hq.png) |
+| Branch VoIP PC receives a lease across the WAN (10.10.2.64/27, gateway 10.10.2.65, DNS 10.10.0.130) | Pass | [svc-09b](docs/screenshots/services/svc-09b-dhcp-voip-br.png) |
+| Management workstations use static addresses inside the MGMT subnets, outside the DHCP pools (BR-MGMT 10.10.2.132, HQ-MGMT 10.10.1.72) | Pass | [svc-08](docs/screenshots/service/svc-08-static-mgmt-br.png), [svc-08b](docs/screenshots/services/svc-08b-static-mgmt-hq.png) |
+| Branch staff resolves `web.chris.lab` through the central DNS server | Pass | [svc-05](docs/screenshots/services/svc-05-dns-br-staff-internal-ok.png) |
+| NAT overload translates HQ staff traffic to 203.0.113.2 | Pass | [svc-06](docs/screenshots/services/svc-06-nat-hq-staff-icmp.png) |
+| NAT translates branch staff traffic and guest DNS queries | Pass | [svc-07](docs/screenshots/services/svc-07-nat-br-staff-and-guest-dns.png) |
+| HQ guest reaches 8.8.8.8 | Pass | [svc-10](docs/screenshots/services/svc-10-guest-internet-hq-and-ssh-blocked.png) |
+| Branch guest reaches 8.8.8.8 | Pass | [svc-10b](docs/screenshots/services/svc-10b-guest-internet-br-and-ssh-blocked.png) |
 
 ### Routing
 
