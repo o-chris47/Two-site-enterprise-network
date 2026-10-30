@@ -164,7 +164,7 @@ Evidence is stored under [`docs/screenshots/`](docs/screenshots/) in three folde
 
 | Test | Result | Evidence |
 |---|---|---|
-| HQ staff PC receives a DHCP lease through the relay (10.10.0.0/25, gateway 10.10.0.1, DNS 10.10.0.130) | Pass | [svc-01](docs/screenshots/service/svc-01-dhcp-hq-staff.png) |
+| HQ staff PC receives a DHCP lease through the relay (10.10.0.0/25, gateway 10.10.0.1, DNS 10.10.0.130) | Pass | [svc-01][View DHCP HQ Staff Screenshot](docs/screenshots/service/svc-01-dhcp-hq-staff.png) |
 | HQ guest laptop on the guest SSID receives a lease (10.10.1.0/26, gateway 10.10.1.1) | Pass | [svc-02](docs/screenshots/service/svc-02-dhcp-hq-guest-wifi.png) |
 | Branch staff PC receives a lease across the WAN (10.10.2.0/26, gateway 10.10.2.1) | Pass | [svc-03](docs/screenshots/service/svc-03-dhcp-br-staff.png), [svc-03b](docs/screenshots/service/svc-03b-dhcp-br-staff-second-lease.png) |
 | Branch guest laptop on the guest SSID receives a lease (10.10.2.96/27, gateway 10.10.2.97) | Pass | [svc-04](docs/screenshots/service/svc-04-dhcp-br-guest-wifi.png) |
