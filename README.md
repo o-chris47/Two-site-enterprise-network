@@ -244,19 +244,6 @@ The full log, with symptom, cause, fix and evidence for each item, is in [`docs/
 - **Layer 2 loop:** duplicate ping replies and an unreliable server were caused by both uplinks of each access switch forwarding at once. Explicit root priorities and plain (non-edge, unbundled) access uplinks let Rapid PVST+ block the redundant path. The duplicate replies were observed but not captured, so only the fixed state is evidenced.
 - **HSRP would not fail over:** the default tracking penalty left the active core's priority tied with the standby's. Starting priority minus the penalty must be below the peer's priority, so Core-1 runs at 105.
 
-## Limitations and future work
-
-### Limitations
-
-- **HSRP authentication:** not supported by the Packet Tracer image used. On real IOS it is enabled with `standby <group> authentication md5 key-string <key>` on every group, using the same key on both cores. Compensating controls are in place: edge ports are locked down with PortFast, BPDU guard and port security, unused ports are shut down, and guest and management traffic sit in separate VLANs.
-- **Voice:** the VoIP VLAN, subnets and DHCP pools are provisioned and tested with PCs, but there is no telephony service, QoS or phones. This is a voice-ready design, not a working voice service.
-- **Single point of failure at the branch:** the branch depends on the serial WAN link and HQ-R1 for DHCP and DNS, so a WAN failure leaves branch clients without new leases. The core-failure protection applies to HQ.
-- **Guest DNS:** the guest ACL blocks all of 10.10.0.0/16, which includes the internal DNS server, so the guest DHCP pools hand out a public DNS server (8.8.8.8). Guests therefore cannot resolve internal names, which is intended.
-- **Simulated ISP:** it runs no DNS service, so internet names do not resolve in this lab. Internet reachability is tested by IP (8.8.8.8).
-- **Port security:** one MAC address per port, so a PC connected through an IP phone would need a maximum of 2 on that port. This build has no phones, so one is enough.
-- **OSPF authentication:** the tests show authentication enabled and adjacencies up. A wrong-key test, showing that a mismatched key blocks an adjacency, was not run.
-- **VLAN 999:** it is both the native VLAN and the parking VLAN for unused ports.
-- **Password hashing:** secrets use Cisco type 5 hashing, which is the strongest option these Packet Tracer images support.
 
 ### Not built (future work)
 
