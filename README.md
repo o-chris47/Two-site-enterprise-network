@@ -31,7 +31,7 @@ A company runs a head office in Kumasi and a branch in Accra. Staff, servers, gu
 | Gateway redundancy | HSRP across two Layer 3 core switches with preemption and uplink tracking | A core failure does not take the gateway down |
 | Routing | Single-area OSPF with passive interfaces, MD5 authentication on every link, and a default route from HQ-R1 | Automatic routes between sites, protected from rogue routers |
 | Services | Static addressing for infrastructure and DHCP for users, a central DHCP server with relay at both sites, DNS with internal records, NAT with overload to a simulated ISP | One service point for both sites, with HQ protected from a core failure |
-| Security | Guest isolation ACL, management ACL on the VTY lines, SSH only, hashed secrets, OSPF authentication, unused VLAN 1, no DTP on switch-to-switch trunks, unused ports shut down and parked | Least privilege and layered defense |
+| Security | Standard and extended ACLs, SSH hardening, routing protocol authentication, IPsec site-to-site VPN (IKE, ESP, crypto maps and crypto ACLs), wireless security (WPA2-PSK) | VTY ACL, guest isolation ACL, NAT ACL, OSPF links, HQ-R1 and BR-R1, guest SSIDs |
 | Wireless | Guest SSID with WPA2-PSK mapped to the guest VLAN at both sites | Wireless guests get the same isolation as wired ones |
 
 ## Skills demonstrated
