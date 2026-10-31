@@ -278,6 +278,7 @@ The full log, with symptom, cause, fix and evidence for each item, is in [`docs/
         ├── routing-and-redundancy/
         ├── security-and-wireless/
         └── service/
+└──two-site-enterprise-network.pkt
 ```
 
 ## Security note
