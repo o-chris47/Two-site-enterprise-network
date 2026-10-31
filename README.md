@@ -144,6 +144,24 @@ Both ends must use the same key and key ID, or the adjacency does not come up. V
 - **DHCP and DNS:** one central server in the Servers VLAN. `ip helper-address 10.10.0.130` is set on the Staff, VoIP and Guest gateways at both sites, and deliberately not on the Servers and MGMT gateways. Staff and VoIP clients get the internal DNS server, and guests get a public DNS server (8.8.8.8).
 - **NAT:** HQ-R1 translates all of 10.10.0.0/16 to its ISP-facing address with overload.
 
+
+
+
+### IPsec VPN
+ 
+| Test | Result | Evidence |
+|---|---|---|
+| IKE negotiation completes and the security association reaches QM_IDLE | Pass | [vpn-01](docs/screenshots/security-and-wireless/vpn-01-isakmp-sa-qm-idle.png) |
+| IPsec encapsulation, encryption, decapsulation and decryption counters increase for protected traffic | Pass | [vpn-02](docs/screenshots/security-and-wireless/vpn-02-ipsec-sa-counters.png), [vpn-02b](docs/screenshots/security-and-wireless/vpn-02b-ipsec-sa-counters-brr1.png) |
+| HQ staff and branch staff reach each other through the tunnel | Pass | [vpn-03](docs/screenshots/security-and-wireless/vpn-03-staff-to-staff-ping.png) |
+| Branch staff reaches the HQ server through the tunnel | Pass | [vpn-04](docs/screenshots/security-and-wireless/vpn-04-branch-staff-to-hq-server.png) |
+| VoIP and management networks at both sites reach each other through the tunnel | Pass | [vpn-05](docs/screenshots/security-and-wireless/vpn-05-voip-and-mgmt-connectivity.png) |
+| SSH administration works between the sites in both directions | Pass | [vpn-06](docs/screenshots/security-and-wireless/vpn-06-ssh-between-sites.png) |
+| Branch guest reaches 8.8.8.8 but cannot ping HQ internal addresses (guests are outside the VPN) |
+| Crypto ACL 110 on HQ-R1 and BR-R1 holds the mirrored network pairs, with no guest network | Pass | [vpn-08](docs/screenshots/security-and-wireless/vpn-08-crypto-acl-final-hqr1.png), [vpn-08b](docs/screenshots/security-and-wireless/vpn-08b-crypto-acl-final-brr1.png) |
+ 
+
+
 ### Security
 
 - **Guest isolation:** the `Guest-in` ACL is applied inbound on the Guest gateway at both sites. It permits DHCP, denies the whole 10.10.0.0/16 range, and permits everything else, so guests reach the internet and nothing internal.
@@ -245,14 +263,6 @@ The full log, with symptom, cause, fix and evidence for each item, is in [`docs/
 - **HSRP would not fail over:** the default tracking penalty left the active core's priority tied with the standby's. Starting priority minus the penalty must be below the peer's priority, so Core-1 runs at 105.
 
 
-### Not built (future work)
-
-- IPsec site-to-site VPN between HQ and the branch
-- Network monitoring (SNMP, syslog and NetFlow collection)
-- Configuration backup automation
-- DHCP snooping and dynamic ARP inspection
-- IPv6
-- OSPF HMAC-SHA authentication with key chains, which newer IOS versions support
 
 ## Repository layout
 
